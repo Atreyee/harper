@@ -82,7 +82,7 @@ module Harper
     end
 
     def filter_by_request_body(mocks_for_requested_http_method, request_body)
-      mocks_for_requested_http_method.select { |m| m["request_body"] && request_body =~ /#{m["request_body"]}/ }  unless request_body.empty?
+      mocks_for_requested_http_method.select { |m| m["request_body"] && request_body =~ /#{m["request_body"]}/i }  unless request_body.empty?
     end
 
     def filter_by_http_method(http_method, mock_id)
